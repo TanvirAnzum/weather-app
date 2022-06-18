@@ -4,7 +4,30 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="shortcut icon" href="./icon.png" type="image/x-icon" />
+    <title>Weather</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="./script.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <main class="main">
+      <div class="main__wrapper">
+        <h1 class="main__wrapper__title">Weather App</h1>
+        <form action="" class="main__wrapper__form">
+          <input
+            type="text"
+            name="text"
+            id="city"
+            placeholder="Enter Your City"
+          />
+        </form>
+        <div class="main__wrapper__divider">
+          <hr class="line left" />
+          <p>Or</p>
+          <hr class="line right" />
+        </div>
+        <button class="btn">Get Device Location</button>
+      </div>
+    </main>
+  </body>
 </html>
