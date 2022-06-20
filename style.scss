@@ -1,7 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,400;8..144,700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Roboto Flex", sans-serif;
 }
 
 .main {
@@ -13,8 +16,8 @@
   background: url("./bg.jpg");
 
   &__wrapper {
-    width: 18vw;
-    height: 40vh;
+    width: min(21.6em, 90%);
+    height: min(27em, 90%);
     background-color: #668cb0;
     border-radius: 0.5em;
     display: flex;
@@ -29,6 +32,7 @@
     &__form {
       width: 80%;
       margin-inline: auto;
+      position: relative;
 
       input {
         width: 100%;
@@ -38,12 +42,24 @@
         outline: none;
         border: none;
         font-size: 1em;
+
         &:focus::placeholder {
           color: transparent;
         }
       }
+      &::before {
+        content: "Example: Rangpur, Bd or Rangpur";
+        width: 100%;
+        height: 1em;
+        color: white;
+        font-size: 0.8em;
+        position: absolute;
+        bottom: -1.5em;
+        left: 0;
+      }
     }
     &__divider {
+      margin-top: 1em;
       width: 80%;
       display: flex;
       align-items: center;
@@ -76,6 +92,109 @@
         color: whitesmoke;
         background-color: #02223b;
         cursor: pointer;
+      }
+    }
+  }
+  &__outcome {
+    width: min(24em, 96%);
+    height: min(33em, 90%);
+    background-color: #668cb0;
+    border-radius: 0.8em;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    .fa-location-dot {
+      color: rgba($color: whitesmoke, $alpha: 0.8);
+    }
+
+    &__top {
+      width: 100%;
+      height: 4em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 2px solid rgba($color: whitesmoke, $alpha: 0.4);
+      position: relative;
+
+      .fa-arrow-left {
+        color: whitesmoke;
+        width: 2em;
+        position: absolute;
+        left: calc(0% + 0.5em);
+        transition: all 0.5s ease-in-out;
+
+        &:hover {
+          cursor: pointer;
+          color: #02223b;
+        }
+      }
+    }
+    &__content {
+      width: 100%;
+      display: flex;
+      gap: 1em;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      color: whitesmoke;
+
+      .img {
+        display: block;
+        width: 5em;
+      }
+    }
+
+    &__bottom {
+      width: 100%;
+      height: 5em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      div {
+        width: 50%;
+        height: 100%;
+        border-top: 2px solid rgba($color: whitesmoke, $alpha: 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: whitesmoke;
+        span {
+          display: block;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          i {
+            color: rgba($color: whitesmoke, $alpha: 0.8);
+            padding-right: 0.5em;
+          }
+        }
+      }
+      div:first-child {
+        border-right: 1px solid rgba($color: whitesmoke, $alpha: 0.4);
+      }
+      div:last-child {
+        border-left: 1px solid rgba($color: whitesmoke, $alpha: 0.4);
+      }
+      .feels_like,
+      .humidity {
+        display: inline;
+        position: relative;
+        bottom: 0.6em;
+        width: 5em;
+        &::before {
+          font-size: 0.8em;
+          position: absolute;
+          height: 2em;
+          bottom: calc(0% - 2em);
+        }
+      }
+      .feels_like::before {
+        content: "Feels Like";
+      }
+      .humidity::before {
+        content: "Humidity";
       }
     }
   }
